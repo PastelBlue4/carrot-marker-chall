@@ -34,15 +34,21 @@ export default function About() {
       </div>
       <div className={styles.container}>
         <div className={styles.profile}>
-          <img src={aboutBillions.squareImage} />
+          <img
+            className={styles.profileImage}
+            src={aboutBillions.squareImage}
+          />
         </div>
-        <div>
-          <h1 className={styles.profileName}>{aboutBillions.name}</h1>
-          <span>industries : {aboutBillions.industries}</span>{" "}
-          <span>
-            netWorth : {Math.ceil(aboutBillions.netWorth / 1000)} Billions
-          </span>
-          <span>country : {aboutBillions.country}</span>
+
+        <h1 className={styles.profileName}>{aboutBillions.name}</h1>
+        <div className={styles.subInfoContainer}>
+          <div className={styles.subInfo}>
+            <span>industries : {aboutBillions.industries}</span>{" "}
+            <span>
+              netWorth : {Math.ceil(aboutBillions.netWorth / 1000)} Billions
+            </span>
+            <span>country : {aboutBillions.country}</span>
+          </div>
         </div>
         <div className={styles.giveTitle}>
           <span>이 행임이 내게 물건을 사주신다면?</span>
@@ -86,9 +92,13 @@ export default function About() {
           </div>
         </div>
         <br></br>
-        <span>{aboutBillions.about}</span>
+        <div className={styles.textContainer}>
+          <span>{aboutBillions.about}</span>
+        </div>
         <br></br>
-        <span>{aboutBillions.bio}</span>
+        <div className={styles.textContainer}>
+          <span>{aboutBillions.bio}</span>
+        </div>
       </div>
     </>
   );
