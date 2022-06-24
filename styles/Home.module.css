@@ -1,15 +1,17 @@
-.container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  background-color: #c6f9d4;
-}
-
 .header {
   display: flex;
   justify-content: center;
   width: auto;
   height: auto;
+  background-color: #c6f9d4;
+  padding-bottom: 30px;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: #c6f9d4;
 }
 
 .billionContainer {
@@ -19,11 +21,13 @@
   height: auto;
   width: auto;
   margin: 3px;
+  cursor: pointer;
 }
 .billionContainer img {
   display: flex;
   width: 300px;
   height: 300px;
+  cursor: pointer;
 }
 .billionName {
   width: 300px;
@@ -32,9 +36,11 @@
   margin-top: 10px;
   height: 35px;
   white-space: normal;
+  text-decoration: none;
 }
 
-.billionNetWorth {
+.billionNameDeco > a:link {
+  text-decoration: none !important;
 }
 
 .billionIndustries {

@@ -1,0 +1,42 @@
+.container {
+  background-color: blanchedalmond;
+}
+
+.profile {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.profileName {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.imgaeCointainer {
+  display: flex;
+  width: 100%;
+  height: 400px;
+  justify-content: space-around;
+}
+
+.giveTitle {
+  width: 300px;
+  height: 20px;
+}
+
+.subContainer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: beige;
+  pading: 30px;
+}
+.subContainer > span {
+  margin-top: 10px;
+}
+
+.aboutImg {
+  width: 500px;
+  height: 350px;
+}

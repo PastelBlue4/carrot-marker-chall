@@ -1,10 +1,24 @@
 import Head from "next/head";
+import Link from "next/link";
+import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
 import styles from "../styles/Home.module.css";
 
 export default function Home() {
   const [billions, setBillions] = useState([]);
+  const router = useRouter();
+  const onClick = (id) => {
+    router.push(
+      {
+        pathname: `/about/${id}`,
+        query: {
+          id,
+        },
+      },
+      `/about/${id}`
+    );
+  };
   useEffect(() => {
     (async () => {
       const data = await (
@@ -31,12 +45,33 @@ export default function Home() {
         />
       </div>
       <div className={styles.container}>
-        {billions?.map((billion) => (
-          <div className={styles.billionContainer} key={billion.id}>
+        {billions.map((billion) => (
+          <div
+            onClick={() => onClick(billion.id)}
+            className={styles.billionContainer}
+            key={billion.id}
+          >
             <img src={billion.squareImage} alt="billion Image" />
-            <h4 className={styles.billionName}>{billion.name}</h4>
+            <h4 className={styles.billionName}>
+              <Link
+                className={styles.billionNameDeco}
+                href={{
+                  pathname: `/about/${billion.id}`,
+                  query: {
+                    id: billion.id,
+                  },
+                }}
+                as={`/about/${billion.id}`}
+              >
+                <a> {billion.name}</a>
+              </Link>
+            </h4>
+
             <div>
-              <span className={styles.billionNetWorth}>{billion.netWorth}</span>
+              <span className={styles.billionNetWorth}>
+                {" "}
+                {Math.ceil(billion.netWorth / 1000)} Billions /
+              </span>
               <span className={styles.billionIndustries}>
                 {billion.industries}
               </span>
