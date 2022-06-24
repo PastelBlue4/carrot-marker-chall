@@ -39,7 +39,7 @@ export default function Home() {
       </div>
       <div className={styles.header}>
         <img
-          src="/gotomars.jpeg"
+          src="/gotoMars.jpeg"
           className={styles.headerDoge}
           alt="we go mars 갈끄니까~"
         />
